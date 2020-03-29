@@ -3,7 +3,17 @@
     <app-post-card></app-post-card>
   </div>
   <div class="col-md-3">
-    <app-author-profile></app-author-profile>
+    <div class="btn-group">
+    <ng-container *ngIf="appUser">
+      <button class="btn btn-success" [routerLinkActive]='["link-active"]' [routerLink]='["/addpost"]'>
+        Add Post
+      </button>
+    </ng-container>
+    <span class="spacer"></span>
+      <button class="btn btn-danger" [routerLinkActive]='["link-active"]' [routerLink]='["/counsellor"]'>
+        View Counsellor
+      </button>
   </div>
-  <app-scroller></app-scroller>
+    <span class="spacer"></span>
 </div>
+

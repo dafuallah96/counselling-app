@@ -1,12 +1,12 @@
 <mat-toolbar class="nav-bar mat-elevation-z2">
   <button mat-button [routerLink]='["/"]'> Timeline </button>
-  <button mat-button [routerLink]='["/aboutus"]'>
+  <button mat-button [routerLinkActive]='["link-active"]' [routerLink]='["/aboutus"]'>
     About us
   </button>
   <ng-container *ngIf="appUser">
-    <button mat-button [routerLinkActive]='["link-active"]' [routerLink]='["/addpost"]'>
+    <!-- <button mat-button [routerLinkActive]='["link-active"]' [routerLink]='["/addpost"]'>
       Add Post
-    </button>
+    </button> -->
   </ng-container>
   <span class="spacer"></span>
 
