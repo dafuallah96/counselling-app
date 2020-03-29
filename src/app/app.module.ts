@@ -19,6 +19,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ScrollerComponent } from './components/scroller/scroller.component';
+import { AboutUsComponent } from './components/aboutus/aboutus.component';
 import { PostEditorComponent } from './components/post-editor/post-editor.component';
 import { PostCardComponent } from './components/post-card/post-card.component';
 import { Excerpt } from './customPipes/excerpt';
@@ -46,6 +47,7 @@ import { AdminAuthGuard } from './guards/admin-auth.guard';
     ScrollerComponent,
     PostEditorComponent,
     PostCardComponent,
+    AboutUsComponent,
     Excerpt,
     Slug,
     SocialShareComponent,
@@ -68,6 +70,8 @@ import { AdminAuthGuard } from './guards/admin-auth.guard';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'page/:pagenum', component: HomeComponent },
+      { path: 'aboutus', component: AboutUsComponent },
+      { path: 'counsellor', component: AuthorProfileComponent },
       { path: 'addpost', component: PostEditorComponent, canActivate: [AuthGuard] },
       { path: 'editpost/:id', component: PostEditorComponent, canActivate: [AdminAuthGuard] },
       { path: 'post/:id/:slug', component: PostComponent },
