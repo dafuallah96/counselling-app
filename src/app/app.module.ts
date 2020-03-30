@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { ShareButtonsConfig } from '@ngx-share/core';
 import { HttpClientModule } from '@angular/common/http';
+import {NgDompurifyModule} from '@tinkoff/ng-dompurify'
 
 import { AppComponent } from './app.component';
 import { NgMaterialModule } from './ng-material/ng-material.module';
@@ -22,7 +23,7 @@ import { ScrollerComponent } from './components/scroller/scroller.component';
 import { AboutUsComponent } from './components/aboutus/aboutus.component';
 import { PostEditorComponent } from './components/post-editor/post-editor.component';
 import { PostCardComponent } from './components/post-card/post-card.component';
-import { Excerpt } from './customPipes/excerpt';
+import { NoSanitizePipe } from './customPipes/sanitizeHtml';
 import { Slug } from './customPipes/slug';
 import { SocialShareComponent } from './components/social-share/social-share.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -48,7 +49,7 @@ import { AdminAuthGuard } from './guards/admin-auth.guard';
     PostEditorComponent,
     PostCardComponent,
     AboutUsComponent,
-    Excerpt,
+    NoSanitizePipe,
     Slug,
     SocialShareComponent,
     PaginatorComponent,
@@ -57,6 +58,7 @@ import { AdminAuthGuard } from './guards/admin-auth.guard';
   imports: [
     NgxPaginationModule,
     HttpClientModule,
+    NgDompurifyModule,
     // ShareButtonsModule.withConfig(customConfig),
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
