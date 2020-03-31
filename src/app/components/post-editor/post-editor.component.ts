@@ -8,7 +8,8 @@ import { PostService } from 'src/app/services/posts.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import {NgDompurifyModule} from '@tinkoff/ng-dompurify';
+import { NgDompurifyModule } from '@tinkoff/ng-dompurify';
+import Base64UploaderPlugin from '@ckeditor/Base64Upload';
 
 @Component({
   selector: 'app-post-editor',
@@ -78,6 +79,7 @@ export class PostEditorComponent implements OnInit, OnDestroy {
   setEditorConfig() {
     this.ckeConfig = {
       removePlugins: [],
+      extraPlugins: [Base64UploaderPlugin],
       heading: {
         options: [
           { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
