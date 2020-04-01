@@ -16,9 +16,9 @@
       </mat-card-content>
       <mat-divider></mat-divider>
       <mat-card-actions>
-        <!-- <ng-container *ngIf="appUser.isAdmin">
+        <ng-container *ngIf="appUser && appUser.email == 'counsellorutp@gmail.com'" >
           <button mat-raised-button color="warn" (click)="delete(post.postId)">Delete</button>
-        </ng-container> -->
+        </ng-container>
         <span class="spacer"></span>
         <button mat-raised-button color="primary" [routerLink]="['/post/', post.postId, post.title | slug]">Read
           More</button>

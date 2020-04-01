@@ -3,7 +3,7 @@
     <a (click)="login()">Login with Google</a> to post comments
   </mat-card>
 </ng-template>
-<mat-card *ngIf="appUser.isCounsellor; else anonymousUser" class="comment-card mat-elevation-z2">
+<mat-card *ngIf="appUser && appUser.email == 'counsellorutp@gmail.com'" class="comment-card mat-elevation-z2">
   <mat-card-title>
     LEAVE A REPLY
   </mat-card-title>
